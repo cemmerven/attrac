@@ -1,0 +1,14 @@
+﻿@using AttendanceTracker.Models
+
+@{
+    ViewBag.Title = "AllAttendants";
+}
+
+<h2>Tüm Katılımcılar</h2>
+
+<ul>
+    @foreach ( Attendant attendant in ViewBag.AllAttendants ) {
+        <li>@attendant.Name</li>
+    }
+</ul>
+
