@@ -11,10 +11,6 @@ namespace AttendanceTracker.Controllers
     public class AttendantController : Controller
     {
         
-        List<Attendant> _attendants = new List<Attendant>{
-           new Attendant{ Name = "can", Present = false },
-           new Attendant{ Name = "cem", Present = false }
-        };
 
         public ActionResult Index()
         {
@@ -24,14 +20,21 @@ namespace AttendanceTracker.Controllers
         public ActionResult AllAttendants()
         { 
            
-           return View( _attendants );
+           return View( MvcApplication._attendantRepo.List );
         }
 
         public ActionResult Details( int id )
         {
-           var attendant = _attendants.Find( a => a.Id == id );
+           var attendant = MvcApplication._attendantRepo.FindById( id );
            return View( attendant );
         }
+
+         public ActionResult Delete( int id )
+         {
+           var attendant = MvcApplication._attendantRepo.FindById( id );
+           return View( attendant );
+         }
+
 
     }
 }

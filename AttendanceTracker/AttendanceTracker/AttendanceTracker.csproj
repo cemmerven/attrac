@@ -131,6 +131,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Attendant.cs" />
+    <Compile Include="Models\AttendantRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +220,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Attendant\AllAttendants.cshtml" />
     <Content Include="Views\Attendant\Details.cshtml" />
+    <Content Include="Views\Attendant\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
