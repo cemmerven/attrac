@@ -23,6 +23,7 @@ namespace AttendanceTracker.Controllers
 
         public ActionResult AllAttendants()
         { 
+           
            return View( _attendants );
         }
 
