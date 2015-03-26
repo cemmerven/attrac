@@ -29,12 +29,19 @@ namespace AttendanceTracker.Controllers
            return View( attendant );
         }
 
+         [HttpGet]
          public ActionResult Delete( int id )
          {
            var attendant = MvcApplication._attendantRepo.FindById( id );
            return View( attendant );
          }
 
+         [HttpPost,ActionName("Delete")]
+         public ActionResult DeleteFinal( int id )
+         {
+           // TODO :  delete
+           return RedirectToAction( "AllAttendants" );
+         }
 
     }
 }
