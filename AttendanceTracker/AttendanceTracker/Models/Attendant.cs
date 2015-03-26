@@ -5,6 +5,8 @@ using System.Web;
 
 namespace AttendanceTracker.Models {
    public class Attendant {
+
+      public int Id { get; set; }
       public string Name { get; set; }
       public bool Present { get; set; }
    }

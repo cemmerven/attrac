@@ -23,9 +23,9 @@ namespace AttendanceTracker.Controllers
 
         public ActionResult AllAttendants()
         { 
-           ViewBag.AllAttendants = _attendants;
-           return View();
+           return View( _attendants );
         }
+
 
     }
 }
