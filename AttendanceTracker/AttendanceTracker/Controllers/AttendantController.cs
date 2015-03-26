@@ -27,6 +27,11 @@ namespace AttendanceTracker.Controllers
            return View( _attendants );
         }
 
+        public ActionResult Details( int id )
+        {
+           var attendant = _attendants.Find( a => a.Id == id );
+           return View( attendant );
+        }
 
     }
 }
