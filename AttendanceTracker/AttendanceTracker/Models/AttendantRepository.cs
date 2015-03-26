@@ -37,5 +37,6 @@ namespace AttendanceTracker.Models {
       internal void Create( Attendant attendant ) {
          _attendants.Add( attendant );
       }
+
    }//class
 }//namespace
