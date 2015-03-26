@@ -29,5 +29,13 @@ namespace AttendanceTracker.Models {
 
       }//FindById
 
+
+      internal void Update( Attendant attendant ) {
+        _attendants[ attendant.Id ] = attendant;
+      }
+
+      internal void Create( Attendant attendant ) {
+         _attendants.Add( attendant );
+      }
    }//class
 }//namespace

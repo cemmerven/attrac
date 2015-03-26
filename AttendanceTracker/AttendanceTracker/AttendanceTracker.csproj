@@ -221,6 +221,8 @@
     <Content Include="Views\Attendant\AllAttendants.cshtml" />
     <Content Include="Views\Attendant\Details.cshtml" />
     <Content Include="Views\Attendant\Delete.cshtml" />
+    <Content Include="Views\Attendant\Edit.cshtml" />
+    <Content Include="Views\Attendant\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

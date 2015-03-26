@@ -8,40 +8,68 @@ using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
 {
-    public class AttendantController : Controller
-    {
-        
+   public class AttendantController : Controller
+   {
 
-        public ActionResult Index()
-        {
-            return RedirectToAction( "AllAttendants" );
-        }
+      public ActionResult Index()
+      {
+         return RedirectToAction( "AllAttendants" );
+      }
 
-        public ActionResult AllAttendants()
-        { 
+      public ActionResult AllAttendants()
+      { 
            
-           return View( MvcApplication._attendantRepo.List );
-        }
+         return View( MvcApplication._attendantRepo.List );
+      }
 
-        public ActionResult Details( int id )
-        {
-           var attendant = MvcApplication._attendantRepo.FindById( id );
-           return View( attendant );
-        }
+      public ActionResult Details( int id )
+      {
+         var attendant = MvcApplication._attendantRepo.FindById( id );
+         return View( attendant );
+      }
 
-         [HttpGet]
-         public ActionResult Delete( int id )
-         {
-           var attendant = MvcApplication._attendantRepo.FindById( id );
-           return View( attendant );
-         }
+      [HttpGet]
+      public ActionResult Edit( int id )
+      {
+         var attendant = MvcApplication._attendantRepo.FindById( id );
+         return View( attendant );
+      }
 
-         [HttpPost,ActionName("Delete")]
-         public ActionResult DeleteFinal( int id )
-         {
-           // TODO :  delete
-           return RedirectToAction( "AllAttendants" );
-         }
+      [HttpGet]
+      public ActionResult Create()
+      {
+         return View( new Attendant() );
+      }	  
 
-    }
-}
+      [HttpPost]
+      public ActionResult Create( Attendant attendant )
+      {
+         MvcApplication._attendantRepo.Create( attendant );
+         return RedirectToAction( "AllAttendants" );
+      }	  
+
+      [HttpPost]
+      public ActionResult Edit( Attendant attendant )
+      {
+         MvcApplication._attendantRepo.Update( attendant );
+            
+         return View( attendant );
+      }
+
+      [HttpGet]
+      public ActionResult Delete( int id )
+      {
+         var attendant = MvcApplication._attendantRepo.FindById( id );
+         return View( attendant );
+      }
+
+      [HttpPost,ActionName("Delete")]
+      public ActionResult DeleteFinal( int id )
+      {
+         // TODO :  delete
+         return RedirectToAction( "AllAttendants" );
+      }
+
+   }//class
+
+}//namespace
