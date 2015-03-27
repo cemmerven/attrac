@@ -8,6 +8,7 @@ using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
 {
+
    public class AttendantController : Controller
    {
 
@@ -15,21 +16,13 @@ namespace AttendanceTracker.Controllers
       {
          return RedirectToAction( "AllAttendants" );
       }
-
+     
       public ActionResult AllAttendants()
       { 
-           
          return View( MvcApplication._attendantRepo.List );
       }
 
       public ActionResult Details( int id )
-      {
-         var attendant = MvcApplication._attendantRepo.FindById( id );
-         return View( attendant );
-      }
-
-      [HttpGet]
-      public ActionResult Edit( int id )
       {
          var attendant = MvcApplication._attendantRepo.FindById( id );
          return View( attendant );
@@ -48,11 +41,17 @@ namespace AttendanceTracker.Controllers
          return RedirectToAction( "AllAttendants" );
       }	  
 
+      [HttpGet]
+      public ActionResult Edit( int id )
+      {
+         var attendant = MvcApplication._attendantRepo.FindById( id );
+         return View( attendant );
+      }
+
       [HttpPost]
       public ActionResult Edit( Attendant attendant )
       {
          MvcApplication._attendantRepo.Update( attendant );
-            
          return View( attendant );
       }
 
@@ -64,7 +63,7 @@ namespace AttendanceTracker.Controllers
       }
 
       [HttpPost,ActionName("Delete")]
-      public ActionResult DeleteFinal( int id )
+      public ActionResult DeleteConfirmed( int id )
       {
          // TODO :  delete
          return RedirectToAction( "AllAttendants" );
