@@ -14,6 +14,7 @@ namespace AttendanceTracker.Controllers
 
       public ActionResult Index()
       {
+         //throw new ApplicationException( "TEST EXCEPTION" );
          return RedirectToAction( "AllAttendants" );
       }
      
@@ -22,15 +23,16 @@ namespace AttendanceTracker.Controllers
          return View( MvcApplication._attendantRepo.List );
       }
 
-      public ActionResult Details( int? id )
+      [HandleError(ExceptionType= typeof(Exception), View= "AttendantError" )]
+      public ActionResult Details( int id = int.MinValue )
       {
-
-         if ( id == null ) { 
+         if ( id == int.MinValue ) {
             return new HttpStatusCodeResult( HttpStatusCode.BadRequest );
          }
 
-         var attendant = MvcApplication._attendantRepo.FindById( id.Value );
-         if ( attendant == null ) { 
+         var attendant = MvcApplication._attendantRepo.FindById( id );
+
+         if ( attendant == null ) {
             return HttpNotFound();
          }
 
@@ -60,13 +62,6 @@ namespace AttendanceTracker.Controllers
       [HttpPost]
       public ActionResult Edit( Attendant attendant )
       {
-
-         if ( ! ModelState.IsValid ) { 
-
-            return View( attendant );
-         
-         }
-
          MvcApplication._attendantRepo.Update( attendant );
          return View( attendant );
       }
