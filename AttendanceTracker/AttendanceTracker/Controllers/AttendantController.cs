@@ -63,7 +63,7 @@ namespace AttendanceTracker.Controllers
 
          if ( ! ModelState.IsValid ) { 
 
-            return RedirectToAction( "Edit", attendant );
+            return View( attendant );
          
          }
 
