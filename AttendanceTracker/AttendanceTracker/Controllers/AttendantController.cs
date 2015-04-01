@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-
 using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
@@ -22,9 +22,18 @@ namespace AttendanceTracker.Controllers
          return View( MvcApplication._attendantRepo.List );
       }
 
-      public ActionResult Details( int id )
+      public ActionResult Details( int? id )
       {
-         var attendant = MvcApplication._attendantRepo.FindById( id );
+
+         if ( id == null ) { 
+            return new HttpStatusCodeResult( HttpStatusCode.BadRequest );
+         }
+
+         var attendant = MvcApplication._attendantRepo.FindById( id.Value );
+         if ( attendant == null ) { 
+            return HttpNotFound();
+         }
+
          return View( attendant );
       }
 
@@ -51,6 +60,13 @@ namespace AttendanceTracker.Controllers
       [HttpPost]
       public ActionResult Edit( Attendant attendant )
       {
+
+         if ( ! ModelState.IsValid ) { 
+
+            return RedirectToAction( "Edit", attendant );
+         
+         }
+
          MvcApplication._attendantRepo.Update( attendant );
          return View( attendant );
       }
