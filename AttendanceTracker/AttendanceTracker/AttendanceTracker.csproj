@@ -133,6 +133,7 @@
     <Compile Include="Models\Attendant.cs" />
     <Compile Include="Models\AttendantRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Aid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ErrorLog.txt" />
