@@ -12,7 +12,7 @@ using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
 {
-   [HandleError(ExceptionType= typeof(RepositoryException), View= "RepositoryError") ]
+   //[HandleError(ExceptionType = typeof(RepositoryException), View = "RepositoryError" )]
    public class AttendantController : Controller
    {
 
@@ -87,16 +87,15 @@ namespace AttendanceTracker.Controllers
 
       protected override void OnException( ExceptionContext filterContext ) {
 
-         if ( filterContext != null ) { 
-            Log( filterContext );
-         }
+         Log( filterContext );
 
-         if ( filterContext.ExceptionHandled || ! filterContext.HttpContext.IsCustomErrorEnabled ) {
+
+         if ( !filterContext.ExceptionHandled || !filterContext.HttpContext.IsCustomErrorEnabled ) {
             return;
          }
 
          filterContext.Result = new ViewResult {
-            ViewName = "~/Views/Shared/Error.cshtml",
+            ViewName = "~/Views/Shared/GenericError.cshtml"
          };
 
          filterContext.ExceptionHandled = true;
@@ -123,8 +122,9 @@ namespace AttendanceTracker.Controllers
             SIO.File.AppendAllText( logFile, text.ToString() );
 
          } finally {
-            // SILENT FAILURE
+            // SILENT FAIL
          }
+
       }
 
    }//class
