@@ -23,6 +23,10 @@ namespace AttendanceTracker.Models {
 
       public Attendant FindById( int attendantId ) {
 
+           
+          //throw new RepositoryException( "REPOSITORY TEST EXCEPTION" );
+          throw new Exception( "GENERIC TEST EXCEPTION" ); 
+
           var attendant = _attendants.Find( a => a.Id == attendantId );
          
           return attendant;
@@ -39,4 +43,16 @@ namespace AttendanceTracker.Models {
       }
 
    }//class
+
+   [Serializable]
+   public class RepositoryException : Exception {
+      public RepositoryException() { }
+      public RepositoryException( string message ) : base( message ) { }
+      public RepositoryException( string message, Exception inner ) : base( message, inner ) { }
+      protected RepositoryException(
+       System.Runtime.Serialization.SerializationInfo info,
+       System.Runtime.Serialization.StreamingContext context )
+         : base( info, context ) { }
+   }
+
 }//namespace

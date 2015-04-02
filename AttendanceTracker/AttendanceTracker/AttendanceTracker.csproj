@@ -227,6 +227,7 @@
     <Content Include="Views\Attendant\Edit.cshtml" />
     <Content Include="Views\Attendant\Create.cshtml" />
     <Content Include="Views\Shared\AttendantError.cshtml" />
+    <Content Include="Views\Shared\RepositoryError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using SIO = System.IO;
+
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
 {
-
+   [HandleError(ExceptionType= typeof(RepositoryException), View= "RepositoryError") ]
    public class AttendantController : Controller
    {
 
@@ -38,6 +42,7 @@ namespace AttendanceTracker.Controllers
 
          return View( attendant );
       }
+  
 
       [HttpGet]
       public ActionResult Create()
@@ -78,6 +83,48 @@ namespace AttendanceTracker.Controllers
       {
          // TODO :  delete
          return RedirectToAction( "AllAttendants" );
+      }
+
+      protected override void OnException( ExceptionContext filterContext ) {
+
+         if ( filterContext != null ) { 
+            Log( filterContext );
+         }
+
+         if ( filterContext.ExceptionHandled || ! filterContext.HttpContext.IsCustomErrorEnabled ) {
+            return;
+         }
+
+         filterContext.Result = new ViewResult {
+            ViewName = "~/Views/Shared/Error.cshtml",
+         };
+
+         filterContext.ExceptionHandled = true;
+
+         base.OnException( filterContext );
+      }
+
+      private void Log( ExceptionContext filterContext ) {
+
+         try {
+            var text = new StringBuilder();
+            const string LOG_FILE_NAME = "ErrorLog.txt";
+            string logPath = filterContext.HttpContext.Server.MapPath( "~/App_Data/" );
+            string logFile = Path.Combine( logPath, LOG_FILE_NAME );
+
+            text
+               .AppendFormat( "source: {0}\r\n", filterContext.Exception.Source )
+               .AppendFormat( "target: {0}\r\n", filterContext.Exception.TargetSite )
+               .AppendFormat( "type: {0}\r\n", filterContext.Exception.GetType().Name )
+               .AppendFormat( "message: {0}\r\n", filterContext.Exception.Message )
+               .AppendFormat( "stack: {0}\r\n", filterContext.Exception.StackTrace )
+               ;
+
+            SIO.File.AppendAllText( logFile, text.ToString() );
+
+         } finally {
+            // SILENT FAILURE
+         }
       }
 
    }//class
