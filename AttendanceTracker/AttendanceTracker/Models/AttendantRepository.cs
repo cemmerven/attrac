@@ -23,7 +23,7 @@ namespace AttendanceTracker.Models {
 
       public Attendant FindById( int attendantId ) {
 
-          throw new RepositoryException( "REPOSITORY TEST EXCEPTION" );
+          //throw new RepositoryException( "REPOSITORY TEST EXCEPTION" );
 
           var attendant = _attendants.Find( a => a.Id == attendantId );
           return attendant;
