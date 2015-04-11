@@ -72,6 +72,7 @@ namespace AttendanceTracker.Controllers
          return View( attendant );
       }
 
+
       [HttpGet]
       public ActionResult Delete( int id )
       {

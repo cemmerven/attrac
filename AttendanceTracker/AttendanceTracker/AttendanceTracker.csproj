@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AttendantController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,6 +215,7 @@
     <Content Include="Static\hello-to.html" />
     <Content Include="Static\hello.html" />
     <Content Include="Static\smile.jpg" />
+    <None Include="Views\Shared\HelloTo.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
