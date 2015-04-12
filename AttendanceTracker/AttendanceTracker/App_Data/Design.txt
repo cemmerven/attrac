@@ -25,3 +25,6 @@
    }
 
 }//namespace
+
+
+HelloTo.cshtml @Html.ActionLink( "merhaba", "HelloTo", "Test", new { firstname = "ali" }, null )
