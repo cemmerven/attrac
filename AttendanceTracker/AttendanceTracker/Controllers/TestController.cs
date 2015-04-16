@@ -10,10 +10,12 @@ namespace AttendanceTracker.Controllers
     {
  
       public ActionResult HelloTo() { // FormCollection parameters vs Request.QueryString
-         
          return View( "HelloTo" );
       }
 
+      public ActionResult FormData( string firstname, int number = int.MinValue ) { 
+         return View( "HelloWithParams" );
+      }
 
     }
 }
