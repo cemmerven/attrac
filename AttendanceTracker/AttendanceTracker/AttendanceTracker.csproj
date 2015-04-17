@@ -219,7 +219,7 @@
     <Content Include="Static\site.css" />
     <Content Include="Static\smile.jpg" />
     <None Include="Views\Shared\HelloTo.cshtml" />
-    <Content Include="Views\Shared\HelloWithParams.html" />
+    <None Include="Views\Shared\HelloWithParams.cshtml" />
     <Content Include="Views\Shared\Hello.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

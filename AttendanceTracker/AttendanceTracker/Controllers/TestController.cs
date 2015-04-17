@@ -9,7 +9,7 @@ namespace AttendanceTracker.Controllers
     public class TestController : Controller
     {
  
-      public ActionResult HelloTo() { // FormCollection parameters vs Request.QueryString
+      public ActionResult HelloTo() { // FormCollection (Request.Fom) vs Request.QueryString
          return View( "HelloTo" );
       }
 
