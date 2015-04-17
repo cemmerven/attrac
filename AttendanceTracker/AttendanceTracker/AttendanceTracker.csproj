@@ -213,14 +213,17 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Static\bye.html" />
+    <Content Include="Static\sad.png" />
+    <Content Include="Views\Shared\OK.cshtml" />
     <None Include="Views\Shared\Bye.cshtml" />
     <Content Include="Static\hello-to.html" />
     <Content Include="Static\hello.html" />
     <Content Include="Static\site.css" />
     <Content Include="Static\smile.jpg" />
     <None Include="Views\Shared\HelloTo.cshtml" />
+    <Content Include="Views\Shared\HtmlForm.cshtml" />
     <None Include="Views\Shared\HelloWithParams.cshtml" />
-    <Content Include="Views\Shared\Hello.html" />
+    <None Include="Views\Shared\Hello.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -242,6 +245,7 @@
     <Content Include="Views\Shared\AttendantError.cshtml" />
     <Content Include="Views\Shared\RepositoryError.cshtml" />
     <Content Include="Views\Shared\GenericError.cshtml" />
+    <Content Include="Views\Shared\OKNOT.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
