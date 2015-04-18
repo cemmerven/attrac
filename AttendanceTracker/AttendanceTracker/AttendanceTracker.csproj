@@ -128,6 +128,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AttendantController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Models\HomeAddress.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,6 +250,8 @@
     <Content Include="Views\Shared\OKNOT.cshtml" />
     <Content Include="Views\Shared\HtmlForm2.cshtml" />
     <Content Include="Views\Shared\HtmlForm3.cshtml" />
+    <Content Include="Views\Shared\HtmlForm4.cshtml" />
+    <Content Include="Views\Shared\HtmlForm5.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -11,6 +11,9 @@ namespace AttendanceTracker.Controllers
     {
 
       public ActionResult Hello() { // FormCollection (Request.From) vs Request.QueryString
+
+         // TODO : ViewData vs ViewBag vs TempData
+          
          return View( "Hello" );
       }
  
@@ -53,13 +56,42 @@ namespace AttendanceTracker.Controllers
       public ActionResult HtmlForm3() { 
          return View( "HtmlForm3" );
       }
-      public ActionResult HtmlFormData3( /* TODO : Complex binding person */ ) { 
+      public ActionResult HtmlFormData3( Person person ) {   /*Complex binding, children */ 
+
+         string html = "";
+
+         var content = new ContentResult();
+         content.Content = html;
+
+         return content;
+      
+      }
+
+      //-----------------------------------------------------------------------
+ 
+      public ActionResult HtmlForm4() { 
+         return View( "HtmlForm4" );
+      }
+      public ActionResult HtmlFormData4( List<Person> people ) {  /*Complex binding, collection */ 
 
          return new EmptyResult();
       
       }
 
       //-----------------------------------------------------------------------
+ 
+      public ActionResult HtmlForm5() { 
+         return View( "HtmlForm5" );
+      }
+      public ActionResult HtmlFormData5( Person person /* address */ ) {  /*Complex binding, mutliple parameters*/ 
+
+         return new EmptyResult();
+      
+      }
+
+      //-----------------------------------------------------------------------
+
+       // TODO : HtmlForm6 Complex binding, aggregate address
 
     }//class
 

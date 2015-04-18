@@ -32,4 +32,21 @@
    public string Mail{ get; set; }
 
 
+   @"<!DOCTYPE html>
+      <html>
+      <head>
+            <title>bye " +  + @"</title>
+      </head>
+      <body>
+         <p> bye " +  + @"</p>
+         <img src='/static/smile.jpg' alt='gülümse' />
+      </body>
+      </html>";
+
+   public class HomeAddress {
+      public string Street{ get; set; }
+      public int PostalCode{ get; set; }
+   
+   }
+
 HelloTo.cshtml @Html.ActionLink( "merhaba", "HelloTo", "Test", new { firstname = "ali" }, null )
