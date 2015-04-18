@@ -221,7 +221,7 @@
     <Content Include="Static\site.css" />
     <Content Include="Static\smile.jpg" />
     <None Include="Views\Shared\HelloTo.cshtml" />
-    <Content Include="Views\Shared\HtmlForm.cshtml" />
+    <Content Include="Views\Shared\HtmlForm1.cshtml" />
     <None Include="Views\Shared\HelloWithParams.cshtml" />
     <None Include="Views\Shared\Hello.cshtml" />
     <Content Include="Web.config">
@@ -246,6 +246,8 @@
     <Content Include="Views\Shared\RepositoryError.cshtml" />
     <Content Include="Views\Shared\GenericError.cshtml" />
     <Content Include="Views\Shared\OKNOT.cshtml" />
+    <Content Include="Views\Shared\HtmlForm2.cshtml" />
+    <Content Include="Views\Shared\HtmlForm3.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

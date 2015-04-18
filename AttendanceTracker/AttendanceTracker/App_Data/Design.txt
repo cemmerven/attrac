@@ -26,5 +26,10 @@
 
 }//namespace
 
+   // complex binding person
+   public string Name{ get; set; }
+   public int Age{ get; set; }
+   public string Mail{ get; set; }
+
 
 HelloTo.cshtml @Html.ActionLink( "merhaba", "HelloTo", "Test", new { firstname = "ali" }, null )
