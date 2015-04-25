@@ -19,12 +19,19 @@ namespace AttendanceTracker.Controllers
 
       public ActionResult Index()
       {
+
+         ViewBag.Name = "ali";
+         TempData["Name"] = "veli";
+
          //throw new ApplicationException( "TEST EXCEPTION" );
          return RedirectToAction( "AllAttendants" );
       }
      
       public ActionResult AllAttendants()
       { 
+         
+         var ad = TempData["Name"];
+
          return View( MvcApplication._attendantRepo.List );
       }
 
@@ -54,6 +61,10 @@ namespace AttendanceTracker.Controllers
       [HttpPost]
       public ActionResult Create( Attendant attendant )
       {
+         
+         if ( ! ModelState.IsValid )
+            return View( attendant );
+
          MvcApplication._attendantRepo.Create( attendant );
          return RedirectToAction( "AllAttendants" );
       }	  
@@ -68,6 +79,9 @@ namespace AttendanceTracker.Controllers
       [HttpPost]
       public ActionResult Edit( Attendant attendant )
       {
+         if ( ! ModelState.IsValid )
+            return View( attendant );
+
          MvcApplication._attendantRepo.Update( attendant );
          return View( attendant );
       }

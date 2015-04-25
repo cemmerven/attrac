@@ -9,15 +9,26 @@
 
         <input type="text"   name="person.Name" value="" /><br />
         <input type="number" name="person.Age" value="" /><br />
-        <input type="email" name="person.Mail" value="" /><br />
+        <input type="email"  name="person.Mail" value="" /><br />
         <br />
 
-        <input type="text" name="Street" value="" /><br />
-        <input type="number" name="PostalCode" value="" /><br />
+        <input type="text" name="address.street" value="" /><br />
+        <input type="number" name="address.zipcode" value="" /><br />
+        <br />
+
+        <input type="submit" />
+    </form>
+
+    <form action="/test/htmlformdata" method="post">
+
+        <input type="text"   name="name" /><br />
+        <input type="number" name="age"  /><br />
+        <input type="email"  name="mail" /><br />
         <br />
 
         <input type="submit" />
 
     </form>
+
 </body>
 </html>

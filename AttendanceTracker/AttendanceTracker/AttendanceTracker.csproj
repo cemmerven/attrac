@@ -252,6 +252,12 @@
     <Content Include="Views\Shared\HtmlForm3.cshtml" />
     <Content Include="Views\Shared\HtmlForm4.cshtml" />
     <Content Include="Views\Shared\HtmlForm5.cshtml" />
+    <Content Include="Views\Shared\HtmlForm6.cshtml" />
+    <Content Include="Views\Shared\HtmlFormViewSelection.cshtml" />
+    <Content Include="Views\Shared\HtmlLink1.cshtml" />
+    <Content Include="Views\Shared\HtmlList1.cshtml" />
+    <Content Include="Views\Shared\HtmlList2.cshtml" />
+    <Content Include="Views\Shared\HtmlLink2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

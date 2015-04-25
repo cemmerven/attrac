@@ -50,3 +50,34 @@
    }
 
 HelloTo.cshtml @Html.ActionLink( "merhaba", "HelloTo", "Test", new { firstname = "ali" }, null )
+
+System.ComponentModel.DataAnnotations
+https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations%28v=vs.110%29.aspx
+
+DataType enumeration
+https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype(v=vs.110).aspx
+
+html input:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
+
+html veri tipleri (data types)
+http://www.w3schools.com/tags/att_input_type.asp
+
+
+String.Format 
+https://msdn.microsoft.com/en-us/library/System.String.Format(v=vs.110).aspx
+
+Standard Numeric Format Strings
+https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx
+
+Formatting Types in the .NET Framework
+https://msdn.microsoft.com/en-us/library/26etazsy(v=vs.110).aspx
+
+
+razor syntax quick ref
+http://haacked.com/archive/2011/01/06/razor-syntax-quick-reference.aspx/
+
+razor syntax intro
+http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-(c)
+
+
