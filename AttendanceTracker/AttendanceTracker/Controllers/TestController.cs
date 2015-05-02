@@ -143,6 +143,9 @@ namespace AttendanceTracker.Controllers
          var path = Server.MapPath(".");
          path = Server.MapPath("..");
          path = Server.MapPath("~/");
+         var str = HttpRuntime.AppDomainAppVirtualPath;
+         
+         
          // Html.Action
          // Html.ActionLink
          // Url.Action
