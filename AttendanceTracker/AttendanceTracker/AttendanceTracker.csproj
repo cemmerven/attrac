@@ -258,6 +258,8 @@
     <Content Include="Views\Shared\HtmlList1.cshtml" />
     <Content Include="Views\Shared\HtmlList2.cshtml" />
     <Content Include="Views\Shared\HtmlLink2.cshtml" />
+    <Content Include="Views\Shared\HtmlHelper1.cshtml" />
+    <Content Include="Views\Shared\HtmlHelper2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

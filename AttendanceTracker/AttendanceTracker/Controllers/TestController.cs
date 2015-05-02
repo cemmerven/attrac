@@ -145,7 +145,6 @@ namespace AttendanceTracker.Controllers
          path = Server.MapPath("~/");
          var str = HttpRuntime.AppDomainAppVirtualPath;
          
-         
          // Html.Action
          // Html.ActionLink
          // Url.Action
@@ -168,6 +167,21 @@ namespace AttendanceTracker.Controllers
 
       //-----------------------------------------------------------------------       
 
+      public ActionResult HtmlHelper1() {  // Boş razor form ve GET POST ayrımı 
+
+         return View();
+      
+      }
+
+      public ActionResult HtmlHelper2() {  // Razor form ve birkaç sık kullanılan alan
+
+         var person  = new Person{ Name = "ali", Age = 12, Registration = DateTime.Now };
+
+         return View( person );
+      
+      }
+
+      //-----------------------------------------------------------------------       
     }//class
 
 }//namespace
