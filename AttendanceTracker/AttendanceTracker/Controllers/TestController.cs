@@ -8,9 +8,18 @@ using AttendanceTracker.Models;
 
 namespace AttendanceTracker.Controllers
 {
+
     public class TestController : Controller
     {
 
+      public ActionResult Show( string date ) { // route match target with cosntraints
+
+         var data = RouteData;
+         return new EmptyResult();
+      }
+
+
+      //[Timer] // Filter attribute sample
       public ActionResult Hello() { // FormCollection (Request.From) vs Request.QueryString
 
          // TODO : ViewData vs ViewBag vs TempData

@@ -85,4 +85,40 @@ Rendering a Form in ASP.NET MVC Using HTML Helpers
 https://msdn.microsoft.com/en-us/library/dd410596(v=vs.100).aspx
 
 
+// Karşılık gelen namespace-controller-class-action-method-parameters
+   routes.MapRoute(
+      name: "Blog",
+      url: "blog/{year}/{month}/{day}",
+      defaults: new { controller = "Blog", action = "Index", 
+         year  = UrlParameter.Optional, 
+         month = UrlParameter.Optional, 
+         day   = UrlParameter.Optional 
+      },
+      constraints: new { 
+         year  = @"\d{2}",
+         month = @"\d{2}",
+         day   = @"\d{2}",
+      },
+      namespaces: new[] {
+         "BlogEngine.Core.Controllers",
+         "BlogEngine.Other.Controllers",
+      }
+   );
+
+   // Area specific catch all route
+
+
+//Filters
+ TimerAttribute : ActionFilterAttribute, IActionFilter
+{
+    void IActionFilter.OnActionExecuting( ActionExecutingContext filterContext ) {
+        this.OnActionExecuting( filterContext );
+    }
+
+}
+
+void IActionFilter.OnActionExecuted( ActionExecutedContext filterContext ) {
+   this.OnActionExecuted( filterContext );
+}
+
 

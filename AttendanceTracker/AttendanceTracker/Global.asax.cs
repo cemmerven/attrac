@@ -17,6 +17,7 @@ namespace AttendanceTracker {
       internal static AttendantRepository _attendantRepo = new AttendantRepository();
 
       protected void Application_Start() {
+
          AreaRegistration.RegisterAllAreas();
 
          WebApiConfig.Register( GlobalConfiguration.Configuration );
