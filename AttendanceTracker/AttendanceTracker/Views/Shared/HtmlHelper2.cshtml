@@ -28,6 +28,12 @@
     <h2>@Html.Display( "Age" )</h2>
     <h2>@Html.Display( "Registration" )</h2>
 
+    <h2>@Html.DisplayFor( m => m.Name )</h2>
+    <h2>@Html.DisplayFor( m => m.Age )</h2>
+    <h2>@Html.DisplayFor( m => m.Registration )</h2>
+
+
+
 
    @using( Html.BeginForm() ){
 
@@ -42,7 +48,7 @@
 
        @* Razor sözdizim elemanları "<text>" ve "@:" *@
        
-       @Html.TextArea( "mesage", new { id = "abcd", cols= 50, rows= 20, placeholder = "mesajınız?" } ) <br />
+       @Html.TextArea( "mesage", new { id = "abcd", cols= 50, rows= 20, placeholder = "mesajınız?", maxlength = 2 } ) <br />
        @Html.CheckBox( "katılıyorum", true ) <text> BENİ DE AL </text> <br/>
 
        @Html.RadioButton( "secenekler", "",   true  ) @:A <br />
@@ -55,5 +61,36 @@
        <input type="submit" value="gönder"/>
    }
 
+
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.HiddenFor( m => m.Name, "HAL9000")
+
+        @Html.LabelFor( m => m.Name, new { style = "background:green;" }) <br />
+        @Html.Label("adınız", new Dictionary<string, object> { { "style", "background:red;" } })
+
+        @Html.TextBox("name", null, new { placeholder = "adınızı buraya yazınız" })
+        <br />
+        <br />
+
+        @* Razor sözdizim elemanları "<text>" ve "@:" *@
+
+        @Html.TextArea("mesage", new { id = "abcd", cols = 50, rows = 20, placeholder = "mesajınız?", maxlength = 2 }) <br />
+        @Html.CheckBox("katılıyorum", true) <text> BENİ DE AL </text> <br />
+
+        @Html.RadioButton("secenekler", "", true) @:A <br />
+        @Html.RadioButton("secenekler", "", false) @:B <br />
+        @Html.RadioButton("secenekler", "xy", false) @:C <br />
+
+
+        @Html.DropDownList("beğendiklerim", items) @:seç birini  <br />
+
+
+
+
+        <input type="submit" value="gönder" />
+    }
 </body>
 </html>

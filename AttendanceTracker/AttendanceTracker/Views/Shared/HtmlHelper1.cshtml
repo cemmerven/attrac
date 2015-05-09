@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>hello</title>
+    <link href="/Static/site.css" rel="stylesheet" />
+</head>
+<body>
+
+   http isteği: <br/>
+
+   @if ( IsPost ) {
+     <h2>POST</h2>
+   } else {
+     <h2>GET</h2>
+   } 
+
+   
+
+   @*  
+       Düzgün, boş ve gönderilebilir
+       form oluşturmanın sağlıklı yolu
+   *@
+
+   @using( Html.BeginForm() ){
+   
+       <input type="submit" value="gönder"/>
+   }
+
+</body>
+</html>

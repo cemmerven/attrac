@@ -6,7 +6,10 @@ using System.Text;
 
 namespace AttendanceTracker.Models {
    public class Person {
+
+      [Display(Name= "ad?")] 
       public string Name{ get; set; }
+
       public int Age{ get; set; }
       public string Mail{ get; set; }
 
