@@ -1,0 +1,124 @@
+﻿namespace AttendanceTracker.Models {
+
+   public enum Presence {
+      Unchecked = 0,
+      Present,
+      Absent
+   }
+
+   public class Day {
+      public int Id { get; set; }
+      public int Number { get; set; }
+      public DateTime Date { get; set; }
+   }
+
+   public class Attendant {
+      public int Id { get; set; }
+      public string Name { get; set; }
+   }
+
+   public class Attendance {
+      public int Id { get; set; }
+      public Attendant Attendant { get; set; }
+      public Day Day { get; set; }
+      public Presence Presence { get; set; }
+   }
+
+}//namespace
+
+   // complex binding person
+   public string Name{ get; set; }
+   public int Age{ get; set; }
+   public string Mail{ get; set; }
+
+
+   @"<!DOCTYPE html>
+      <html>
+      <head>
+            <title>bye " +  + @"</title>
+      </head>
+      <body>
+         <p> bye " +  + @"</p>
+         <img src='/static/smile.jpg' alt='gülümse' />
+      </body>
+      </html>";
+
+   public class HomeAddress {
+      public string Street{ get; set; }
+      public int PostalCode{ get; set; }
+   
+   }
+
+HelloTo.cshtml @Html.ActionLink( "merhaba", "HelloTo", "Test", new { firstname = "ali" }, null )
+
+System.ComponentModel.DataAnnotations
+https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations%28v=vs.110%29.aspx
+
+DataType enumeration
+https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype(v=vs.110).aspx
+
+html input:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
+
+html veri tipleri (data types)
+http://www.w3schools.com/tags/att_input_type.asp
+
+
+String.Format 
+https://msdn.microsoft.com/en-us/library/System.String.Format(v=vs.110).aspx
+
+Standard Numeric Format Strings
+https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx
+
+Formatting Types in the .NET Framework
+https://msdn.microsoft.com/en-us/library/26etazsy(v=vs.110).aspx
+
+
+razor syntax quick ref
+http://haacked.com/archive/2011/01/06/razor-syntax-quick-reference.aspx/
+
+razor syntax intro
+http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-(c)
+
+
+Rendering a Form in ASP.NET MVC Using HTML Helpers
+https://msdn.microsoft.com/en-us/library/dd410596(v=vs.100).aspx
+
+
+// Karşılık gelen namespace-controller-class-action-method-parameters
+   routes.MapRoute(
+      name: "Blog",
+      url: "blog/{year}/{month}/{day}",
+      defaults: new { controller = "Blog", action = "Index", 
+         year  = UrlParameter.Optional, 
+         month = UrlParameter.Optional, 
+         day   = UrlParameter.Optional 
+      },
+      constraints: new { 
+         year  = @"\d{2}",
+         month = @"\d{2}",
+         day   = @"\d{2}",
+      },
+      namespaces: new[] {
+         "BlogEngine.Core.Controllers",
+         "BlogEngine.Other.Controllers",
+      }
+   );
+
+   // Area specific catch all route
+
+
+//Filters
+ TimerAttribute : ActionFilterAttribute, IActionFilter
+{
+    void IActionFilter.OnActionExecuting( ActionExecutingContext filterContext ) {
+        this.OnActionExecuting( filterContext );
+    }
+
+}
+
+void IActionFilter.OnActionExecuted( ActionExecutedContext filterContext ) {
+   this.OnActionExecuted( filterContext );
+}
+
+

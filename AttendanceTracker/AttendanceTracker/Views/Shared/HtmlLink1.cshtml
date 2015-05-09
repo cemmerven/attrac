@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>hello</title>
+        <link href="/Static/site.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <a href="/test/htmllinktarget1">link hedefi 1</a>  <br />
+
+        <a href="@Url.Action( "HtmlLinkTarget1", "Test" )">link hedefi 2</a>  <br />
+        @Html.ActionLink( "link hedefi 3", "HtmlLinkTarget1", "Test"  )  <br />
+
+        @Html.Action( "OK" )
+
+
+        @section Something{
+            
+        }
+
+    </body>
+</html>
