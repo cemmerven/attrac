@@ -122,3 +122,65 @@ void IActionFilter.OnActionExecuted( ActionExecutedContext filterContext ) {
 }
 
 
+--SAMPLE HTML BEGIN------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doküman Anatomisi</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/> 
+    <link rel="stylesheet" type="text/css" ref="http://foo.com/style/site.css"/> 
+    <script type="text/javascript" src="http://foo.com/code/main.js"/> 
+  </head>
+
+  <body>
+    <h1>Merhaba</h1>
+  </body>
+
+</html>
+
+--SAMPLE HTML END--------
+
+
+
+--SAMPLE HELPER BEGIN------
+
+    // App_Code -> helpers.cshtml 
+    // htmhelper2.cshtml
+
+    @DisplayPeson( Model )
+
+    @helper DisplayPeson( Person person ) {
+
+        <ul>
+            <li>@person.Name</li>
+            <li>@person.Age</li>
+            <li>@person.Mail</li>
+        </ul>
+    
+    }
+
+--SAMPLE HELPER END------
+
+
+--SAMPLE FUNCTION BEGIN------
+
+// App_Code -> functions.cshtml 
+// htmhelper2.cshtml
+
+@Format( DateTime.Now, "U" )
+
+ @functions  {
+    
+     // public static
+     string Format( object value, string format ) {
+         return String.Format( format, value );
+     }
+ }
+
+--SAMPLE FUNCTION END------
+
+http://www.asp.net/mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
+
+
+

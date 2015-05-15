@@ -8,19 +8,27 @@ using System.Web.Routing;
 namespace AttendanceTracker {
    public class RouteConfig {
       public static void RegisterRoutes( RouteCollection routes ) {
+
          routes.IgnoreRoute( "{resource}.axd/{*pathInfo}" );
 
          routes.RouteExistingFiles = true;
 
          routes.MapRoute(
             name: "Beden",
-            url: "{controller}/{action}/{date}",
-            defaults: new { controller = "Test", action = "Show", date = "2012-12-12" },
-            constraints: new { date = @"\d{4}-\d{2}-\d{2}" }
+            url: "{controller}/{action}/{*anything}",
+            defaults: new { controller = "Test", action = "Show", anyting = UrlParameter.Optional}
+          
          );
 
 
          /*
+         routes.MapRoute(
+            name: "Beden",
+            url: "{controller}/{action}/{date}",
+            defaults: new { controller = "Test", action = "Show", date = "2012-12-12" },
+            constraints: new { date = @"\d{4}-\d{2}-\d{2}" }
+         );
+          * 
          routes.MapRoute(
             name: "Default",
             url: "{controller}/{action}/{id}"

@@ -12,10 +12,11 @@ namespace AttendanceTracker.Controllers
     public class TestController : Controller
     {
 
-      public ActionResult Show( string date ) { // route match target with cosntraints
+      public ActionResult Show( string anything ) { // route match target with cosntraints
 
          var data = RouteData;
-         return new EmptyResult();
+
+         return View("Hello");
       }
 
 
