@@ -148,9 +148,9 @@ void IActionFilter.OnActionExecuted( ActionExecutedContext filterContext ) {
     // App_Code -> helpers.cshtml 
     // htmhelper2.cshtml
 
-    @DisplayPeson( Model )
+    @DisplayPerson( Model )
 
-    @helper DisplayPeson( Person person ) {
+    @helper DisplayPerson( Person person ) {
 
         <ul>
             <li>@person.Name</li>
