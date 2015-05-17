@@ -1,0 +1,16 @@
+﻿
+@*
+    Her hangi bir sıkı tiplendirilmiş (Model -> Person) View *.cshtm  içinde
+    @Aid.DisplayPerson( Model )
+    yazılarak çağrılabilir.
+*@
+
+@helper DisplayPerson( AttendanceTracker.Models.Person person ) {
+
+    <ul>
+        <li>@person.Name</li>
+        <li>@person.Age</li>
+        <li>@person.Mail</li>
+    </ul>
+
+}
