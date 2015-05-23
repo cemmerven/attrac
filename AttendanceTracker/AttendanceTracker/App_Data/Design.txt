@@ -180,7 +180,36 @@ void IActionFilter.OnActionExecuted( ActionExecutedContext filterContext ) {
 
 --SAMPLE FUNCTION END------
 
+mvc & migrations
 http://www.asp.net/mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
+
+--------
+DispalyModes
+         IList<IDisplayMode> modes = DisplayModeProvider.Instance.Modes;
+
+DisplayModeProvider.Instance.Modes.Insert(1, new DefaultDisplayMode("iPhone")  
+{  
+    ContextCondition = (ctx => ctx.GetOverriddenUserAgent()  
+    .IndexOf("iPhone", StringComparison.OrdinalIgnoreCase) > 0)     
+}); 
+
+--------
+
+Recomended Tutorials & articles (MVC5)
+http://www.asp.net/mvc/overview/getting-started/mvc-learning-sequence
+
+Code First Migrations (MVC5)
+http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
+
+
+Migrations
+https://msdn.microsoft.com/en-us/data/jj591621.aspx
+
+Automatic Code First Migrations
+https://msdn.microsoft.com/en-us/data/jj554735.aspx
+
+Web Developer Checklist
+http://webdevchecklist.com/aspnet
 
 
 

@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.WebPages;
 using AttendanceTracker.Models;
 
 namespace AttendanceTracker {
@@ -19,6 +20,8 @@ namespace AttendanceTracker {
       protected void Application_Start() {
 
          AreaRegistration.RegisterAllAreas();
+
+         IList<IDisplayMode> modes = DisplayModeProvider.Instance.Modes;
 
          WebApiConfig.Register( GlobalConfiguration.Configuration );
          FilterConfig.RegisterGlobalFilters( GlobalFilters.Filters );
