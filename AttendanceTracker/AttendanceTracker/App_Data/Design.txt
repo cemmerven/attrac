@@ -208,8 +208,24 @@ https://msdn.microsoft.com/en-us/data/jj591621.aspx
 Automatic Code First Migrations
 https://msdn.microsoft.com/en-us/data/jj554735.aspx
 
+Migrations (komut yardımı)
+http://www.mortenanderson.net/code-first-migrations-for-entity-framework
+
 Web Developer Checklist
 http://webdevchecklist.com/aspnet
+
+Yardımcı araçlar ve Kütüphanler
+   Glimpse
+   http://getglimpse.com
+   Elmah
+   PM > Install-Packages Elmah
+   http://www.asp.net/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
+   Web Essentials for VS
+   http://vswebessentials.com
+
+Domain Driven Design
+http://dddcommunity.org
+http://en.wikipedia.org/wiki/Domain-driven_design
 
 
 
